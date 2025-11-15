@@ -1,0 +1,65 @@
+.login-form {
+  max-width: 400px;
+  width: 90%;
+  margin: 10vh auto;
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.nz-input {
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+
+  &:focus {
+    border-color: #1890ff;
+    box-shadow: 0 0 0 2px rgba(24,144,255,0.2);
+  }
+}
+
+button[nz-button] {
+  height: 44px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  background-color: #1890ff;
+  color: #fff;
+
+  &:hover {
+    background-color: #40a9ff;
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    background-color: #d9d9d9;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-footer {
+  text-align: center;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    padding: 30px 20px;
+  }
+}
