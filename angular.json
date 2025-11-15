@@ -32,7 +32,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
             ],
             "scripts": []
           },
@@ -95,8 +95,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "1ad7ffcb-71aa-4b87-8015-1361271bf76a",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }
