@@ -34,9 +34,8 @@ export class LoginComponent {
   private router = inject(Router);
 
   validateForm = this.fb.group({
-    username: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
-    remember: [true],
   });
 
   icons = [UserOutline, LockOutline];
