@@ -1,0 +1,160 @@
+:host {
+  display: block;
+  padding: 20px;
+  background: var(--app-bg, #f6f8fa);
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+nz-table {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(11, 22, 40, 0.06);
+  overflow-x: auto;
+}
+
+nz-table thead th {
+  background: transparent;
+  color: #262626;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 16px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+nz-table tbody tr {
+  transition:
+    background-color 0.18s ease,
+    transform 0.12s ease;
+  cursor: default;
+}
+
+nz-table tbody tr:hover {
+  background-color: #f5f7fb;
+  transform: translateY(-2px);
+}
+
+nz-table tbody td {
+  padding: 12px 16px;
+  vertical-align: top;
+  color: #444;
+  font-size: 14px;
+  max-width: 420px;
+}
+
+nz-table tbody td:first-child {
+  font-weight: 600;
+  color: #111827;
+}
+
+nz-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 540px;
+}
+
+nz-table tbody td:last-child {
+  text-align: right;
+  width: 140px;
+}
+
+button[nz-button][nztype='link'],
+button[nz-button][nzType='link'] {
+  color: #1890ff;
+  font-weight: 600;
+  padding: 4px 8px;
+}
+
+::ng-deep nz-drawer {
+  --drawer-bg: #ffffff;
+}
+
+.nz-drawer-content-wrapper,
+.nz-drawer-body {
+  background: #fff;
+  color: #222;
+}
+
+.nz-drawer-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.nz-drawer-body > div {
+  margin-top: 6px;
+}
+
+.comment {
+  background: #fbfdff;
+  border: 1px solid rgba(24, 144, 255, 0.06);
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(11, 22, 40, 0.03);
+}
+
+.comment .meta {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.comment .meta strong {
+  font-size: 14px;
+  color: #0b2b4a;
+}
+
+.comment .meta small {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.comment p.body {
+  margin: 0;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+nz-drawer hr,
+.nz-drawer-body hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.02));
+  margin: 12px 0;
+}
+
+@media (max-width: 720px) {
+  :host {
+    padding: 12px;
+  }
+
+  nz-table {
+    padding: 8px;
+  }
+
+  nz-table thead th,
+  nz-table tbody td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  nz-table tbody td:nth-child(2) {
+    max-width: 280px;
+  }
+
+  nz-table tbody td:last-child {
+    width: 110px;
+  }
+}
+
+nz-table tbody tr:focus-within,
+nz-table tbody tr:focus {
+  outline: 2px solid rgba(24, 144, 255, 0.12);
+  outline-offset: 2px;
+}
