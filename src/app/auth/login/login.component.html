@@ -1,7 +1,7 @@
 <section>
 <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
   <nz-form-item>
-    <nz-form-control nzErrorTip="Please enter your Email!">
+    <nz-form-control nzErrorTip="Please enter an valid Email">
       <nz-input-group nzPrefixIcon="user">
         <input type="email" nz-input formControlName="email" placeholder="Email" />
       </nz-input-group>
@@ -9,7 +9,7 @@
   </nz-form-item>
 
   <nz-form-item>
-    <nz-form-control nzErrorTip="Please enter your Password!">
+    <nz-form-control nzErrorTip="Please enter your password (minimum 6 characters)">
       <nz-input-group nzPrefixIcon="lock">
         <input type="password" nz-input formControlName="password" placeholder="Password" />
       </nz-input-group>
