@@ -1,59 +1,94 @@
-# UserExplorer
+# Descripción del Proyecto
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+UserExplorer es una aplicación Angular construida con Angular 19, diseñada para explorar, filtrar y visualizar información de usuarios de forma dinámica y responsiva.
+Consume una API REST de prueba, permite la navegación por lista de usuarios paginada, filtrado por nombre/email y compañía, y muestra detalles ampliados en un panel lateral (drawer), incluyendo las últimas publicaciones del usuario.
 
-## Development server
+El proyecto hace uso de:
 
-To start a local development server, run:
+Angular Signals para manejo reactivo de estado local
 
-```bash
-ng serve
-```
+Ng-Zorro Ant Design como librería de componentes UI
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Stand-alone components
 
-## Code scaffolding
+Paginación dinámica
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Filtros combinados
 
-```bash
-ng generate component component-name
-```
+Drawer lateral con información contextual
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Test unitarios con Karma + Jasmine
 
-```bash
-ng generate --help
-```
+Coverage de tests habilitado
 
-## Building
+# Funcionalidades Principales
 
-To build the project run:
+✔ Listado de usuarios en tabla con diseño responsivo
+✔ Filtro en tiempo real por:
 
-```bash
-ng build
-```
+Nombre
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Email
 
-## Running unit tests
+Compañía (selector con reset automático)
+✔ Paginación con mantenimiento del filtro activo
+✔ Vista detallada de usuario en Drawer:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Datos personales
 
-```bash
-ng test
-```
+Email, teléfono y dirección
 
-## Running end-to-end tests
+Compañía
 
-For end-to-end (e2e) testing, run:
+Sitio web con enlace externo
+✔ Visualización de las últimas 5 publicaciones del usuario
+✔ Estilos personalizados SCSS
+✔ Fondo contextual de página (dashboard style)
+✔ Title centralizado
 
-```bash
-ng e2e
-```
+# Tecnologías Utilizadas
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Angular 19 + Signals
 
-## Additional Resources
+Ng-Zorro Ant Design
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+TypeScript
+
+RxJS
+
+SCSS
+
+Karma + Jasmine
+
+ESLint
+
+# Estructura del Código
+
+Componentes standalone
+
+Estado gestionado con signals (signal())
+
+Funciones puras para filtrado y paginación
+
+Servicios desacoplados para consumo de API
+
+Obtener empresas dinámicamente con Set()
+
+Código modular y escalable
+
+# Instalaciòn de Dependencias
+
+✔ nmp install
+
+# Ejecutar el servidor de desarrollo
+
+✔ npm start
+
+# Tests y Cobertura
+
+✔ npm run test
+
+# Coverage:
+
+✔ npm run test:coverage
+✔ El reporte se genera en coverage/user-explorer/index.html
