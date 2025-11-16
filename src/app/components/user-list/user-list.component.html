@@ -1,1 +1,76 @@
-<p>user-list works!</p>
+<div class="filters" style="display: flex; gap: 8px; margin-bottom: 12px">
+  <input
+    nz-input
+    placeholder="Buscar por nombre o email"
+    [(ngModel)]="filterText"
+    (ngModelChange)="currentPage.set(1)"
+  />
+  <nz-select
+    [(ngModel)]="filterCompany"
+    (ngModelChange)="currentPage.set(1)"
+    style="width: 220px"
+    allowClear
+  >
+    <nz-option *ngFor="let c of companies" [nzValue]="c" [nzLabel]="c"></nz-option>
+  </nz-select>
+</div>
+
+<nz-table nzBordered>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Company</th>
+      <th style="width: 120px; text-align: right">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of pagedUsers">
+      <td>{{ user.username }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.company.name }}</td>
+      <td style="text-align: right">
+        <button nz-button nzType="link" (click)="openDrawer(user)">Open</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+<div style="margin-top: 16px; display: flex; justify-content: flex-end">
+  <nz-pagination
+    [nzPageIndex]="currentPage()"
+    [nzPageSize]="pageSize"
+    [nzTotal]="filteredUsers.length"
+    (nzPageIndexChange)="onPageIndexChange($event)"
+  >
+  </nz-pagination>
+</div>
+
+<nz-drawer
+  [nzTitle]="selectedUser()?.name"
+  [nzWidth]="480"
+  [nzVisible]="drawerVisible()"
+  (nzOnClose)="closeDrawer()"
+>
+  <ng-container *nzDrawerContent>
+    <p>City: {{ selectedUser()?.address?.city }}, Zip: {{ selectedUser()?.address?.zipcode }}</p>
+    <p>Phone: {{ selectedUser()?.phone }}</p>
+    <p>Email: {{ selectedUser()?.email }}</p>
+    <p>Company: {{ selectedUser()?.company?.name }}</p>
+    <p>
+      Website:
+      <a href="https://{{ selectedUser()?.website }}" target="_blank">{{
+        selectedUser()?.website
+      }}</a>
+    </p>
+
+    <h3 style="margin-top: 16px">Últimas 5 notas</h3>
+    <div *ngFor="let p of posts()">
+      <h4 style="margin: 6px 0">{{ p.title }}</h4>
+      <p style="margin: 0 0 12px">{{ p.body }}</p>
+      <nz-divider></nz-divider>
+    </div>
+  </ng-container>
+</nz-drawer>
