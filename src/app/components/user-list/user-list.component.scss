@@ -1,69 +1,45 @@
+.page-title {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  font-size: 40px;
+}
+
 :host {
   display: block;
   padding: 20px;
-  background: var(--app-bg, #f6f8fa);
+  background: var(--app-bg, #969799) !important;
   min-height: 100%;
   box-sizing: border-box;
 }
 
 nz-table {
-  background: #fff;
+  background: center;
   border-radius: 10px;
   padding: 12px;
   box-shadow: 0 6px 18px rgba(11, 22, 40, 0.06);
   overflow-x: auto;
 }
 
-nz-table thead th {
-  background: transparent;
-  color: #262626;
+::ng-deep .ant-table-row .ant-table-cell {
+  background: #afbbbac0;
+  color: #1f1e1e;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   padding: 12px 16px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.06);
   text-align: left;
-}
-
-nz-table tbody tr {
-  transition:
-    background-color 0.18s ease,
-    transform 0.12s ease;
-  cursor: default;
+  cursor: pointer;
 }
 
 nz-table tbody tr:hover {
-  background-color: #f5f7fb;
+  background-color: #7fa3eb !important;
   transform: translateY(-2px);
-}
-
-nz-table tbody td {
-  padding: 12px 16px;
-  vertical-align: top;
-  color: #444;
-  font-size: 14px;
-  max-width: 420px;
-}
-
-nz-table tbody td:first-child {
-  font-weight: 600;
-  color: #111827;
-}
-
-nz-table tbody td:nth-child(2) {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 540px;
-}
-
-nz-table tbody td:last-child {
-  text-align: right;
-  width: 140px;
 }
 
 button[nz-button][nztype='link'],
 button[nz-button][nzType='link'] {
-  color: #1890ff;
+  color: #1a86eb;
   font-weight: 600;
   padding: 4px 8px;
 }
@@ -72,19 +48,18 @@ button[nz-button][nzType='link'] {
   --drawer-bg: #ffffff;
 }
 
-.nz-drawer-content-wrapper,
-.nz-drawer-body {
-  background: #fff;
+::ng-deep .ant-drawer-body {
+  background: #9988a1 !important;
   color: #222;
 }
 
-.nz-drawer-title {
+::ng-deep .ant-drawer-title {
   font-size: 18px;
   font-weight: 700;
   color: #0f172a;
 }
 
-.nz-drawer-body > div {
+::ng-deep .ant-drawer-body > div {
   margin-top: 6px;
 }
 
@@ -157,4 +132,30 @@ nz-table tbody tr:focus-within,
 nz-table tbody tr:focus {
   outline: 2px solid rgba(24, 144, 255, 0.12);
   outline-offset: 2px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 12px;
+}
+
+.filter-text {
+  width: 220px;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9 !important;
+}
+
+::ng-deep .ant-select-selector {
+  border-radius: 5px !important;
+}
+
+.paginator-container {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+:host ::ng-deep .ant-table-placeholder {
+  display: none !important;
 }

@@ -46,29 +46,26 @@ describe('LoginComponent', () => {
 
   it('should initialize the form', () => {
     expect(component.validateForm).toBeDefined();
-    expect(component.validateForm.controls['username']).toBeDefined();
+    expect(component.validateForm.controls['email']).toBeDefined();
     expect(component.validateForm.controls['password']).toBeDefined();
-    expect(component.validateForm.controls['remember']).toBeDefined();
   });
 
   it('should navigate to /users when form is valid', () => {
     component.validateForm.setValue({
-      username: 'testuser',
+      email: 'testuser@gmail.com',
       password: '123456',
-      remember: true,
     });
     component.submitForm();
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/users']);
   });
 
   it('should mark controls as dirty when form is invalid', () => {
-    const usernameControl = component.validateForm.controls['username'];
+    const usernameControl = component.validateForm.controls['email'];
     const passwordControl = component.validateForm.controls['password'];
 
     component.validateForm.setValue({
-      username: '',
+      email: '',
       password: '',
-      remember: true,
     });
 
     component.submitForm();
